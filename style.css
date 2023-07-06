@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 24px;
+}
+
+.particula {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.particula[data-padre="false"] {
+    width: 5px;
+    height: 5px;
+}
+
+
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+p {
+    color: #777;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    animation: move 2s infinite;
+}
+
+@keyframes move {
+    0% {
+        left: -10px;
+    }
+
+    50% {
+        left: 10px;
+    }
+
+    100% {
+        left: -10px;
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+#confirmButton {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #ff5500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#confirmButton:hover {
+    background-color: #ff7f33;
+}
+
+#cancelButton {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #ff5500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#cancelButton:hover {
+    background-color: #ff7f33;
+}
+
+.explosion-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+    animation: animate-zoom-rotation 4s infinite;
+}
+
+.explosion-image {
+    transition: transform 0.5s;
+}
+
+.zoom-effect {
+    transform: scale(1.2);
+}
+
+.shake-effect {
+    animation: shake 0.5s infinite;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(10px);
+    }
+
+    60% {
+        transform: translateX(-10px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes animate-zoom-rotation {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.animate-zoom-explosion {
+    animation: explosion 2s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #confirmButton {
+        font-size: 18px;
+    }
+}
